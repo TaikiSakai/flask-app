@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    # restart: always
+    build: .
+    container_name: 'api'
+    working_dir: '/app'
+    tty: true
+    command: flask --app __init__.py --debug run
+    volumes:
+      - ./app:/app
+    # command: ls
+    ports:
+      - "9000:5000"
